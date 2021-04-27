@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.css" />
+		<link rel="stylesheet" href="/assets/styles/app.css" />
+		<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+		<script src="/assets/scripts/firebase/app.js"></script>
+		<script src="/assets/scripts/firebase/auth.js"></script>
+		<script src="/assets/scripts/firebase/firestore.js"></script>
+
+		<!-- Our scripts -->
+		<script src="/assets/scripts/app.js"></script>
+		<script src="/assets/scripts/ui.js" defer></script>
+		<script src="/assets/scripts/page/index.js" defer></script>
+		<title>Housie | MiniGames</title>
+	</head>
+	<body>
+		<header></header>
+		<main class="section">
+			<div class="container">
+				<div class="buttons">
+					<button class="button is-large is-fullwidth room-btn" what="create">
+						Create room
+					</button>
+					<button class="button is-large is-fullwidth room-btn" what="join">
+						Join room
+					</button>
+				</div>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</body>
+
+	<div class="modal" id="create-room-modal">
+		<div class="modal-background" modal-function="close"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Create room</p>
+				<button class="delete" modal-function="close"></button>
+			</header>
+			<section class="modal-card-body">
+				<form class="container" id="create-room-form">
+					<div class="field">
+						<label class="label" for="create-room-name">Room name *</label>
+						<div class="control">
+							<input class="input" type="text" name="create-room-name" id="create-room-name" placeholder="Enter a name for your room" />
+						</div>
+						<p class="help"></p>
+					</div>
+					<div class="field">
+						<label class="label" for="create-room-password">Room password</label>
+						<div class="control">
+							<input class="input" type="text" name="create-room-password" id="create-room-password" placeholder="Enter a password for your room" />
+						</div>
+					</div>
+					<div class="field is-grouped">
+						<div class="control">
+							<button class="button" type="button" modal-function="close">
+								Cancel
+							</button>
+						</div>
+						<div class="control">
+							<button class="button is-primary" id="create-room-form-btn" type="submit">
+								Create
+							</button>
+						</div>
+					</div>
+				</form>
+			</section>
+		</div>
+	</div>
+
+	<div class="modal" id="join-room-modal">
+		<div class="modal-background" modal-function="close"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Join room</p>
+				<button class="delete" modal-function="close"></button>
+			</header>
+			<section class="modal-card-body">
+				<form class="container" id="join-room-form">
+					<label class="label" for="room-name">Room id</label>
+					<input class="input" type="text" name="join-room-id" id="join-room-id" placeholder="Enter the room id" />
+					<label class="label" for="join-room-password">Room password</label>
+					<input class="input" type="text" name="join-room-password" id="join-room-password" placeholder="Enter the room password" />
+					<div class="buttons" style="margin-top: 20px;">
+						<button class="button" type="button" modal-function="close">
+							Cancel
+						</button>
+						<button class="button is-primary" id="join-room-form-btn" type="submit">
+							join
+						</button>
+					</div>
+				</form>
+			</section>
+		</div>
+	</div>
+</html>

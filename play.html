@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.css"
+		/>
+		<link rel="stylesheet" href="/assets/styles/app.css" />
+		<script
+			defer
+			src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+		></script>
+		<script src="/assets/scripts/firebase/app.js"></script>
+		<script src="/assets/scripts/firebase/auth.js"></script>
+		<script src="/assets/scripts/firebase/firestore.js"></script>
+		<script src="/assets/scripts/firebase/functions.js"></script>
+
+		<!-- Our scripts -->
+		<script src="/assets/scripts/app.js"></script>
+		<script src="/assets/scripts/ui.js" defer></script>
+		<script src="/assets/scripts/page/play.js" defer></script>
+		<title>Play - Housie | MiniGames</title>
+	</head>
+	<body>
+		<header></header>
+		<main class="section">
+			<div class="container" id="play-page" style="display: none;">
+				<h3 class="has-text-centered is-size-4 has-text-info">
+					Status: <span id="room-status" class="has-text-primary"></span>
+				</h3>
+
+				<div class="container" style="margin-top: 40px;">
+					<h2 class="is-size-3" style="margin-bottom: 30px;">
+						Winners
+					</h2>
+
+					<div id="winners"></div>
+				</div>
+
+				<div class="columns" style="margin-top: 30px;">
+					<div class="column is-two-thirds">
+						<div class="container" style="margin-bottom: 30px;">
+							<h3 class="is-size-3">
+								Current number
+								<span
+									class="is-size-2 has-text-danger"
+									id="current-number"
+								></span>
+							</h3>
+							<p class="has-text-info is-size-5" id="next-number-count"></p>
+						</div>
+						<div class="box">
+							<h3 class="is-size-4 has-text-centered">Your ticket</h3>
+							<div class="container section">
+								<div
+									class="columns has-text-centered is-multiline is-mobile"
+									id="ticket-box"
+								></div>
+							</div>
+						</div>
+						<div class="container">
+							<h2 class="is-size-4">
+								Your Score
+								<span
+									class="has-text-success is-size-3"
+									id="current-score"
+								></span
+								>/10
+							</h2>
+						</div>
+					</div>
+					<div class="column">
+						<!-- <div class="container">
+							<h2 class="is-size-3">Indications</h2>
+							<div
+								class="columns is-vcentered is-mobile"
+								style="margin-top: 20px;"
+							>
+								<div class="column is-one-fifth">
+									<span class="box has-background-white"></span>
+								</div>
+								<div class="column">
+									<p class="is-size-5">Remaining to be announced</p>
+								</div>
+							</div>
+							<div class="columns is-vcentered is-mobile">
+								<div class="column is-one-fifth">
+									<span class="box has-background-danger"></span>
+								</div>
+								<div class="column"><p class="is-size-5">Missed by you</p></div>
+							</div>
+							<div class="columns is-vcentered is-mobile">
+								<div class="column is-one-fifth">
+									<span class="box has-background-success"></span>
+								</div>
+								<div class="column">
+									<p class="is-size-5">Marked when announced</p>
+								</div>
+							</div>
+						</div> -->
+
+						<div class="container">
+							<h2 class="is-size-3">Players</h2>
+
+							<div id="players-list"></div>
+						</div>
+
+						<div class="container">
+							<button
+								class="button is-fullwidth is-primary is-large"
+								id="start-btn"
+								style="margin-top: 50px;"
+							>
+								Start game
+							</button>
+						</div>
+
+						<div class="container" style="margin-top: 50px;">
+							<h2 class="is-size-3">Room details</h2>
+							<div class="columns is-mobile" style="margin-top: 5px;">
+								<div class="column">
+									<p class="is-size-6">
+										Room name:- <span id="room-name"></span>
+									</p>
+								</div>
+							</div>
+							<div class="columns is-mobile">
+								<div class="column">
+									<p class="is-size-6">Room ID:- <span id="room-id"></span></p>
+								</div>
+							</div>
+							<div class="columns is-mobile">
+								<div class="column">
+									<div class="buttons">
+										<button class="button" id="invite-btn">
+											Copy room id
+										</button>
+										<button class="button is-danger" id="exit-btn">
+											Exit room
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</body>
+</html>
